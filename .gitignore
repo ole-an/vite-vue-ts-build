@@ -1,0 +1,19 @@
+dist
+
+# Node deps
+node_modules
+public
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# .env files
+.env
+.env.*
+!.env.example
