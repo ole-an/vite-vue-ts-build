@@ -1,0 +1,10 @@
+pre-push:
+  commands:
+    build:
+      run: npm run lint && npm run build
+
+pre-commit:
+  parallel: true
+  commands:
+    build:
+      run: npm run lint && npm run build
