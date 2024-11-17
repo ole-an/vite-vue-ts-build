@@ -1,19 +1,12 @@
 {
-  "include": [
-    "./src"
-  ],
-  "exclude": [
-    "**/node_modules",
-    "**/dist"
-  ],
+  "include": ["./vite.config.ts", "./src"],
+  "exclude": ["**/node_modules", "**/build"],
   "compilerOptions": {
     "target": "ES2020",
     "module": "ES2020",
-    "moduleResolution": "Node",
-    "lib": [
-      "ES2020"
-    ],
-    "outDir": "dist",
+    "moduleResolution": "node",
+    "lib": ["ES2020"],
+    "outDir": "build",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strict": true,
@@ -21,10 +14,7 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    "types": [
-      "vite/client",
-      "node"
-    ],
+    "types": ["vite/client", "node"],
     "isolatedModules": true,
     "noEmit": true,
     "allowImportingTsExtensions": true,
@@ -32,9 +22,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/": [
-        "src/*"
-      ]
+      "@/": ["src/*"]
     }
   }
 }
