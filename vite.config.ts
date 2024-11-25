@@ -7,7 +7,7 @@ import autoprefixer from 'autoprefixer';
 dotenv.config();
 
 export default defineConfig({
-  base: `./build`,
+  base: `/build`,
   define: {
     __APP_URL: JSON.stringify(process.env.APP_URL),
   },
