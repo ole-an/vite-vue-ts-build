@@ -25,10 +25,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
-    //"linebreak-style" deprecated, use https://eslint.style/rules/js/linebreak-style insted
-    'import/no-unresolved': 'off', //https://github.com/import-js/eslint-plugin-import/issues/1485#issuecomment-1958791609
-    // or instead of "import/resolver" push to "extends" "plugin:import/typescript"
-    //"import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'no-shadow': 'off',
@@ -36,5 +33,4 @@ module.exports = {
     'array-bracket-newline': ['error', { multiline: true }],
     'prettier/prettier': 2,
   },
-  //ignorePatterns: [".eslintrc.cjs", "vite.config.ts"],
 };
