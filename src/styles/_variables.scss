@@ -1,0 +1,29 @@
+// Colors list
+$black: #000;
+$white: #fff;
+$blue: #00f;
+
+:root {
+  // --base-font-family: name;
+  --base-font-weight: 400;
+  --base-font-size: 16px;
+  --base-line-height: 140%;
+  --container-max-width: 1200px;
+  --base-transition: ease-in-out;
+}
+
+:root.light {
+  --bg-color: $white;
+  --text-color: $black;
+  --link-color: $blue;
+  --link-hover-color: $blue;
+  --link-active-color: $blue;
+}
+
+:root.dark {
+  --bg-color: $black;
+  --text-color: $white;
+  --link-color: $blue;
+  --link-hover-color: $blue;
+  --link-active-color: $blue;
+}

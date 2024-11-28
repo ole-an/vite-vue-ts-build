@@ -1,0 +1,64 @@
+/*
+Desktop, tablet → Mobile
+64px → 48px
+48px → 32px
+32px → 24px
+24px → 16px
+16px → 16px
+8px → 8px
+4px → 4px
+*/
+
+$spacer-xs: (
+  4: 4px,
+  8: 8px,
+  16: 16px,
+  24: 16px,
+  32: 24px,
+  48: 32px,
+  64: 48px,
+);
+
+$spacer-md: (
+  4: 4px,
+  8: 8px,
+  16: 16px,
+  24: 24px,
+  32: 32px,
+  48: 48px,
+  64: 64px,
+);
+
+$spacer-xl: (
+  4: 4px,
+  8: 8px,
+  16: 16px,
+  24: 24px,
+  32: 32px,
+  48: 48px,
+  64: 64px,
+);
+
+$spacer-values: (
+  10: 4px,
+  20: 8px,
+  30: 16px,
+  40: 24px,
+  50: 32px,
+  60: 48px,
+  70: 64px,
+);
+
+:root {
+  @each $k, $v in $spacer-values {
+    --gap-#{$v}: #{map-get($spacer-xs, $v)};
+  }
+
+  @include media-breakpoint-up(md) {
+    --gap-#{$v}: #{map-get($spacer-md, $v)};
+  }
+
+  @include media-breakpoint-up(xl) {
+    --gap-#{$v}: #{map-get($spacer-xl, $v)};
+  }
+}
