@@ -1,5 +1,5 @@
 {
-  "include": ["./vite.config.ts", "./src"],
+  "include": ["vite.config.ts", "src"],
   "exclude": ["**/node_modules", "**/build"],
   "compilerOptions": {
     "target": "ES2020",
@@ -20,9 +20,19 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/": ["src/*"]
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@core/*": ["src/core/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@locales/*": ["src/locales/*"],
+      "@modules/*": ["src/modules/*"],
+      "@pages/*": ["src/pages/*"],
+      "@public/*": ["src/public/*"],
+      "@router/*": ["src/router/*"],
+      "@stores/*": ["src/stores/*"],
+      "@styles/*": ["src/styles/*"]
     }
   }
 }
