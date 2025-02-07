@@ -1,0 +1,16 @@
+{
+  "base": {
+    "footer": {},
+    "header": {
+      "logo": "Logo"
+    },
+    "langSwitcher": {
+      "buttonText": "Choose language"
+    }
+  },
+  "pages": {
+    "mainPage": {
+      "pageTitle": "Main page"
+    }
+  }
+}

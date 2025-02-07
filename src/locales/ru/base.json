@@ -1,0 +1,16 @@
+{
+  "base": {
+    "footer": {},
+    "header": {
+      "logo": "Лого"
+    },
+    "langSwitcher": {
+      "buttonText": "Выберите язык"
+    }
+  },
+  "pages": {
+    "mainPage": {
+      "pageTitle": "Главная страница"
+    }
+  }
+}
