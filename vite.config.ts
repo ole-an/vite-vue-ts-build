@@ -3,11 +3,12 @@ import { defineConfig } from 'vite';
 import dotenv from 'dotenv';
 import path from 'path';
 import autoprefixer from 'autoprefixer';
+import svgLoader from 'vite-svg-loader';
 
 dotenv.config();
 
 export default defineConfig({
-  base: `/build`,
+  base: `/`,
   define: {
     __APP_URL: JSON.stringify(process.env.APP_URL),
   },
@@ -15,11 +16,23 @@ export default defineConfig({
     vue({
       include: [/\.vue$/],
     }),
+    svgLoader(),
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@core': path.resolve(__dirname, './src/core'),
+      '@layouts': path.resolve(__dirname, './src/layouts'),
+      '@locales': path.resolve(__dirname, './src/locales'),
+      '@modules': path.resolve(__dirname, './src/modules'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@public': path.resolve(__dirname, './src/public'),
+      '@router': path.resolve(__dirname, './src/router'),
+      '@stores': path.resolve(__dirname, './src/stores'),
+      '@styles': path.resolve(__dirname, './src/styles'),
     },
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   css: {
     postcss: {
@@ -27,18 +40,25 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@app/styles/index.scss";',
+        additionalData: '@use "@styles/index.scss";',
+        api: 'modern-compiler',
       },
     },
   },
   server: {
     port: Number(process.env.PORT) || 8080,
-    host: process.env.APP_HOSTNAME || 'localhost',
+    host: true,
     open: true,
+    watch: {
+      usePolling: true,
+    },
   },
   build: {
     outDir: 'build',
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
       output: {
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
