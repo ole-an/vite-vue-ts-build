@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // https://github.com/twbs/bootstrap/blob/v5.0.2/scss/mixins/_breakpoints.scss
 
 $grid-breakpoints: (
@@ -10,12 +12,12 @@ $grid-breakpoints: (
 );
 
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-  $min: map-get($breakpoints, $name);
+  $min: map.get($breakpoints, $name);
   @return if($min !=0, $min, null);
 }
 
 @function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
-  $max: map-get($breakpoints, $name);
+  $max: map.get($breakpoints, $name);
   @return if($max and $max > 0, $max - 0.02, null);
 }
 
@@ -64,4 +66,8 @@ $grid-breakpoints: (
       @content;
     }
   }
+}
+
+@mixin offset-top-for-dropdown($hoveredBlockHeight, $from: 'top') {
+  #{$from}: calc(#{$hoveredBlockHeight} / 2 + 10px);
 }
