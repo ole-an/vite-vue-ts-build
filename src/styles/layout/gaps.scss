@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '../mixins' as mix;
+
 /*
 Desktop, tablet → Mobile
 64px → 48px
@@ -40,25 +43,48 @@ $spacer-xl: (
 );
 
 $spacer-values: (
-  10: 4px,
-  20: 8px,
-  30: 16px,
-  40: 24px,
-  50: 32px,
-  60: 48px,
-  70: 64px,
+  10: 4,
+  20: 8,
+  30: 16,
+  40: 24,
+  50: 32,
+  60: 48,
+  70: 64,
 );
 
 :root {
   @each $k, $v in $spacer-values {
-    --gap-#{$v}: #{map-get($spacer-xs, $v)};
+    --space-#{$v}: #{map.get($spacer-xs, $v)};
   }
 
-  @include media-breakpoint-up(md) {
-    --gap-#{$v}: #{map-get($spacer-md, $v)};
+  @include mix.media-breakpoint-up(md) {
+    @each $k, $v in $spacer-values {
+      --space-#{$v}: #{map.get($spacer-md, $v)};
+    }
   }
 
-  @include media-breakpoint-up(xl) {
-    --gap-#{$v}: #{map-get($spacer-xl, $v)};
+  @include mix.media-breakpoint-up(xl) {
+    @each $k, $v in $spacer-values {
+      --space-#{$v}: #{map.get($spacer-xl, $v)};
+    }
+  }
+}
+
+@each $k, $v in $spacer-values {
+  .flex_#{$v} {
+    display: flex;
+    gap: var(--gap-#{$v});
+  }
+
+  .flex_column_#{$v} {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-#{$v});
+  }
+
+  .flex_around_#{$v} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-#{$v});
   }
 }
