@@ -73,18 +73,18 @@ $spacer-values: (
 @each $k, $v in $spacer-values {
   .flex_#{$v} {
     display: flex;
-    gap: var(--gap-#{$v});
+    gap: var(--space-#{$v});
   }
 
   .flex_column_#{$v} {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-#{$v});
+    gap: var(--space-#{$v});
   }
 
   .flex_around_#{$v} {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-#{$v});
+    gap: var(--space-#{$v});
   }
 }
