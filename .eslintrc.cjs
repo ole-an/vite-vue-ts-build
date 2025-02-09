@@ -32,6 +32,7 @@ module.exports = {
     'array-bracket-newline': ['error', { multiline: true }],
     'arrow-body-style': ['error', 'as-needed'],
     'no-plusplus': 'off',
+    'no-lonely-if': 'off',
     'no-return-assign': ['error', 'except-parens'],
     'import/extensions': [
       'error',
