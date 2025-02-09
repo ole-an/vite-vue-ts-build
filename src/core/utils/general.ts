@@ -48,7 +48,7 @@ export function replaceClasses(
 }
 
 export function getScrollbarWidth(el: HTMLElement): string {
-  let scrollbarWidth: number = 0;
+  let scrollbarWidth: number;
   if (el === document.body) {
     scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
   } else {
