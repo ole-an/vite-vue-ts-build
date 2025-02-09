@@ -5,12 +5,37 @@
       "logo": "Logo"
     },
     "langSwitcher": {
-      "buttonText": "Choose language"
+      "button": "Choose language"
     }
   },
   "pages": {
-    "mainPage": {
-      "pageTitle": "Main page"
+    "main": {
+      "title": "Main page"
+    },
+    "uiKit": {
+      "title": "UI-KIT"
+    }
+  },
+  "modules": {
+    "uiKit": {
+      "buttons": {
+        "title": "Buttons"
+      },
+      "icons": {
+        "title": "Icons"
+      },
+      "modal": {
+        "default": {
+          "title": "Default modal",
+          "openButton": "Open modal window",
+          "content": {
+            "title": "Modal's title",
+            "desc1": "Modal's body",
+            "desc2": "Yep, there's the body",
+            "closeButton": "Close modal window"
+          }
+        }
+      }
     }
   }
 }
