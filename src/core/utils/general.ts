@@ -47,16 +47,20 @@ export function replaceClasses(
   }
 }
 
-export function getScrollbarWidth(): string {
-  const scrollbarContainer: HTMLDivElement = document.createElement('div');
-  scrollbarContainer.className = 'scrollbar-container';
-  document.body.appendChild(scrollbarContainer);
+export function getScrollbarWidth(el: HTMLElement): string {
+  let scrollbarWidth: number = 0;
+  if (el === document.body) {
+    scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  } else {
+    const scrollbarContainer: HTMLDivElement = document.createElement('div');
+    scrollbarContainer.className = 'scrollbar-container';
+    document.body.appendChild(scrollbarContainer);
 
-  const scrollbarWidth: number =
-    scrollbarContainer.offsetWidth - scrollbarContainer.clientWidth;
+    scrollbarWidth =
+      scrollbarContainer.offsetWidth - scrollbarContainer.clientWidth;
 
-  document.body.removeChild(scrollbarContainer);
-
+    document.body.removeChild(scrollbarContainer);
+  }
   return `${scrollbarWidth}px`;
 }
 
