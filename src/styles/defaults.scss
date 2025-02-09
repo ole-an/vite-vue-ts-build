@@ -10,16 +10,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--main-font-family), 'Arial', 'Helvetica', sans-serif;
-  font-weight: var(--base-font-weight);
+  font-weight: var(--font-weight-base);
   font-style: normal;
-  font-size: var(--base-font-size);
+  font-size: var(--font-size-base);
   line-height: var(--main-line-height);
   text-size-adjust: 100%;
   color: var(--text-color);
+  overflow-wrap: break-word;
   background-color: var(--bg-color);
   transition:
     color 0.3s var(--main-transition),
     background-color 0.3s var(--main-transition);
+  //-webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -35,6 +37,14 @@ body {
 
 main {
   flex-grow: 1;
+  //height: 150vh; // temp for debugging
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 input,
