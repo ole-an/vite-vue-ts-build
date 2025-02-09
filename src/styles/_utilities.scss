@@ -1,9 +1,44 @@
 body {
+  --scrollbar-width: 0;
+  padding-right: 0;
+
   &.body-lock {
-    position: fixed;
-    inset: 0;
+    overflow: hidden;
     width: 100%;
     height: 100%;
+    padding-right: var(
+      --scrollbar-width
+    ); // при скрытии скроллбара, компенсируем его ширину, если она !== 0
+
+    &.has-scrollbar {
+      & .modal-base {
+        padding-right: calc(
+          var(--scrollbar-width) + var(--modal-base-gutters)
+        ); // необходимо компенсировать ширину скроллбара
+      }
+    }
+
+    & .modal-base {
+      &__content {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.has-scrollbar {
+    & .modal-base {
+      &__content {
+        margin-right: 0;
+      }
+    }
+  }
+
+  & .modal-base {
+    &__content {
+      margin-right: calc(
+        var(--scrollbar-width) * -1
+      ); // компенсация сдвига модалки влево при появлении скроллбара
+    }
   }
 }
 
