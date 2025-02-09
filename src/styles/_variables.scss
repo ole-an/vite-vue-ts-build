@@ -1,29 +1,106 @@
+@use 'sass:color';
 // Colors list
 $black: #000;
 $white: #fff;
 $blue: #00f;
+$blue-whale: #213547;
+$white-smoke: #f2f2f2;
+$davy-grey: #555555;
+$nero: #1a1a1a;
+$eclipse: #3c3c3c;
+$matterhorn: #545454;
+$night-rider: #2f2f2f;
+$dim-white: color.change($white, $alpha: 0.85);
+$semi-black: color.change($black, $alpha: 0.6);
 
 :root {
-  // --base-font-family: name;
-  --base-font-weight: 400;
-  --base-font-size: 16px;
-  --base-line-height: 140%;
+  --border-radius-base: 8px;
+  // --font-family-base: name;
+  --font-weight-base: 400;
+  --font-size-base: 16px;
+  --line-height-base: 140%;
+  --transition-property-base: ease-in-out;
+  --transition-duration-base: 0.3s;
+  --transition-duration-normal: 0.25s;
   --container-max-width: 1200px;
-  --base-transition: ease-in-out;
+  --modal-overflow-background-color: #{$semi-black};
+  --modal-content-offset: 32px;
+  --modal-base-gutters: 16px;
+  --dropdown-bottom-offset: -16px;
+  --text-color-light: #{$dim-white};
+  --text-color-dark: #{$blue-whale};
+  --color-dark-primary: #{$nero};
 }
 
 :root.light {
+  color-scheme: light;
   --bg-color: $white;
-  --text-color: $black;
-  --link-color: $blue;
-  --link-hover-color: $blue;
-  --link-active-color: $blue;
+  --button-base-primary-border-color: #{$black};
+  --button-base-primary-color: #{$white};
+  --button-base-primary-background-color: #{$black};
+  --button-base-outline-border-color: #{$black};
+  --button-base-outline-color: #{$black};
+  --button-base-outline-background-color: #{$white};
+  --color-scheme-switcher-base-border-color: #{color.change(
+      $eclipse,
+      $alpha: 0.3
+    )};
+  --color-scheme-switcher-base-hover-border-color: #{color.change(
+      $davy-grey,
+      $alpha: 0.7
+    )};
+  --color-scheme-switcher-base-backgound-color: #{$white-smoke};
+  --color-scheme-switcher-base-toggler-backgound-color: #{$white};
+  --color-scheme-switcher-base-icon-color: #{color.change($eclipse, $alpha: 0.7)};
+  --language-switcher-base-button-color: #{$nero};
+  --dropdown-background-color: #{$white};
+  --dropdown-border-color: #{$black};
+  --text-color: #{$black};
+  --link-color: #{$blue};
+  --link-hover-color: #{$blue};
+  --link-active-color: #{$blue};
+  --modal-background-color: #{$white};
+  --modal-border-color: #{$white};
+  --modal-close-button-color: #{$black};
+  --modal-header-color: #{$black};
 }
 
 :root.dark {
-  --bg-color: $black;
-  --text-color: $white;
-  --link-color: $blue;
-  --link-hover-color: $blue;
-  --link-active-color: $blue;
+  color-scheme: dark;
+  --bg-color: #{$nero};
+  --button-base-primary-border-color: #{$dim-white};
+  --button-base-primary-color: #{$nero};
+  --button-base-primary-background-color: #{$dim-white};
+  --button-base-outline-border-color: #{$dim-white};
+  --button-base-outline-color: #{$dim-white};
+  --button-base-outline-background-color: #{$nero};
+  --color-scheme-switcher-base-border-color: #{color.change(
+      $matterhorn,
+      $alpha: 0.65
+    )};
+  --color-scheme-switcher-base-hover-border-color: #{color.change(
+      $white-smoke,
+      $alpha: 0.5
+    )};
+  --color-scheme-switcher-base-backgound-color: #{$night-rider};
+  --color-scheme-switcher-base-toggler-backgound-color: #{$nero};
+  --color-scheme-switcher-base-icon-color: #{$dim-white};
+  --language-switcher-base-button-color: #{$dim-white};
+  --dropdown-background-color: #{$nero};
+  --dropdown-border-color: #{$dim-white};
+  --text-color: #{$dim-white};
+  --link-color: #{$blue};
+  --link-hover-color: #{$blue};
+  --link-active-color: #{$blue};
+  --modal-background-color: #{$nero};
+  --modal-border-color: #{$nero};
+  --modal-close-button-color: #{$dim-white};
+  --modal-header-color: #{$dim-white};
 }
+
+$box-shadows: (
+  1: (
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06),
+  ),
+);
