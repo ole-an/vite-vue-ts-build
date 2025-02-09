@@ -74,7 +74,7 @@ const setAriaExpandedFalse = () => {
         :size="IconSize.M"
       />
       <span class="language-switcher-base__text">
-        {{ $t('base.langSwitcher.buttonText') }}
+        {{ $t('base.langSwitcher.button') }}
       </span>
     </button>
     <div class="language-switcher-base__dropdown">
