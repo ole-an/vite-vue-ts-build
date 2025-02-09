@@ -1,0 +1,45 @@
+.transition-fade-base {
+  $transition-25: var(--transition-duration-normal);
+
+  &-enter-active {
+    & .modal-base {
+      &__overlay {
+        transition: opacity #{$transition-25} ease-out 0s;
+      }
+
+      &__content {
+        transition:
+          transform #{$transition-25} ease-out #{$transition-25},
+          opacity #{$transition-25} ease-out #{$transition-25};
+      }
+    }
+  }
+
+  &-leave-active {
+    & .modal-base {
+      &__overlay {
+        transition: opacity #{$transition-25} ease-out #{$transition-25};
+      }
+
+      &__content {
+        transition:
+          transform #{$transition-25} ease-out 0s,
+          opacity #{$transition-25} ease-out 0s;
+      }
+    }
+  }
+
+  &-enter-from,
+  &-leave-to {
+    & .modal-base {
+      &__overlay {
+        opacity: 0;
+      }
+
+      &__content {
+        opacity: 0;
+        transform: translateY(var(--modal-content-offset));
+      }
+    }
+  }
+}
