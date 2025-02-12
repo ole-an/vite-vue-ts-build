@@ -9,10 +9,11 @@ import {
 import en from '@locales/en/base.json';
 import ru from '@locales/ru/base.json';
 
-const messages: { ru: object; en: object } = {
-  ru,
-  en,
-};
+export interface ITranslates {
+  [key: string]: any /* необходимо добработать */;
+}
+
+const messages = { ru, en };
 
 function setLocale(locale?: string): string {
   let appLocale: string = localStorage.getItem('locale') || '';
@@ -49,12 +50,12 @@ export function useI18n() {
     setLocale(locale);
   }
 
-  function $t(key: string, param: any = null) {
+  function $t(key: string, param: null | Array<string> = null) {
     const store = useLocalesStore();
     let val = key
       .split('.')
       .reduce(
-        (previousValue: { [key: string]: any }, currentValue: string) =>
+        (previousValue: ITranslates, currentValue: string) =>
           previousValue[currentValue],
         messages[store.currentLocale as keyof typeof messages],
       );
