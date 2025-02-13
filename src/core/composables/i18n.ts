@@ -50,7 +50,7 @@ export function useI18n() {
     setLocale(locale);
   }
 
-  function $t(key: string, param: null | Array<string> = null) {
+  function $t(key: string, param: null | Array<string> = null): ITranslates | string {
     const store = useLocalesStore();
     let val = key
       .split('.')
