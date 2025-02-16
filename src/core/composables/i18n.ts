@@ -1,3 +1,4 @@
+import { createI18n } from 'vue-i18n';
 import { getFirstBrowserLanguage } from '@core/utils/getFirstBrowserLanguage.ts';
 import { useLocalesStore } from '@core/store/locales.store.ts';
 import { setClassName } from '@core/utils/general.ts';
@@ -78,3 +79,12 @@ export function useI18n() {
 export const { $t, initI18n } = useI18n();
 
 initI18n();
+
+export const i18n = createI18n({
+  locale: 'ru',
+  fallbackLocale: 'en',
+  messages: {
+    ru,
+    en,
+  },
+});

@@ -1,6 +1,6 @@
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
-import { useI18n } from '@core/composables/i18n.ts';
+import { i18n, useI18n } from '@core/composables/i18n.ts';
 import { deviceType } from '@core/utils/getInputType.ts';
 import { setClassName } from '@core/utils/general.ts';
 import { router } from '@/router/router.ts';
@@ -14,6 +14,7 @@ export const app = createApp(App);
 
 app.use(pinia);
 app.use(router);
+app.use(i18n);
 registerLayouts(app);
 app.mount('#app');
 
