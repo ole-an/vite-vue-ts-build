@@ -2,7 +2,16 @@
   "base": {
     "footer": {},
     "header": {
-      "logo": "Logo"
+      "logo": "Logo",
+      "menu": {
+        "nav": {
+          "link1": "Home",
+          "link2": "About",
+          "link3": "Services",
+          "link4": "Portfolio",
+          "link5": "Contacts"
+        }
+      }
     },
     "langSwitcher": {
       "button": "Choose language"
@@ -10,10 +19,14 @@
   },
   "pages": {
     "main": {
-      "title": "Main page"
+      "title": "Main page",
+      "description": "Main page description",
+      "h1": "Main page"
     },
     "uiKit": {
-      "title": "UI-KIT"
+      "title": "UI-KIT",
+      "description": "UI-KIT description",
+      "h1": "UI-KIT"
     }
   },
   "modules": {
