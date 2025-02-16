@@ -4,7 +4,7 @@ import { $t } from '@/main.ts';
 
 <template>
   <h1>
-    {{ $t('pages.mainPage.pageTitle') }}
+    {{ $t('pages.main.h1') }}
   </h1>
 </template>
 
