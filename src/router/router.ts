@@ -1,37 +1,32 @@
-import { watchEffect } from 'vue';
-import {
-  createRouter,
-  createWebHistory,
-  RouteLocationNormalized,
-  RouteMeta,
-  Router,
-} from 'vue-router';
+import { watch } from 'vue';
+import { createRouter, createWebHistory, Router } from 'vue-router';
+import { i18n } from '@core/composables/i18n.ts';
 import { routes } from '@/router/routes/routes.ts';
-import { $t } from '@/main.ts';
+
+const { t } = i18n.global;
 
 export const router: Router = createRouter({
   history: createWebHistory(),
   routes,
 });
 
-interface IDocumentMeta extends RouteMeta {
-  title: string;
-  description: string;
-}
-
-router.beforeEach((to: RouteLocationNormalized): void => {
-  const { title, description } = to.meta as IDocumentMeta;
-
-  if (title) {
-    watchEffect(() => (document.title = $t(title) as string));
-  }
-
-  const descriptionElement: Element | null = document.querySelector(
-    'head meta[name="description"]',
-  );
-  if (description && descriptionElement) {
-    watchEffect(() =>
-      descriptionElement.setAttribute('content', $t(description) as string),
+watch(
+  [
+    () => i18n.global.locale,
+    () => router.currentRoute.value.meta.title,
+    () => router.currentRoute.value.meta.description,
+  ],
+  () => {
+    document.title = t(router.currentRoute.value.meta.title as string);
+    document.title = t(router.currentRoute.value.meta.title as string);
+    const descriptionElement: Element | null = document.querySelector(
+      'head meta[name="description"]',
     );
-  }
-});
+    if (descriptionElement && typeof descriptionElement !== null) {
+      descriptionElement.setAttribute(
+        'content',
+        t(router.currentRoute.value.meta.description as string),
+      );
+    }
+  },
+);
