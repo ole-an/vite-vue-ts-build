@@ -20,8 +20,8 @@ export const routes: RouteRecordRaw[] = reactive([
     name: Name.UI_KIT,
     meta: {
       layout: 'Default',
-      title: 'UI-KIT',
-      description: 'Описание UI-KIT',
+      title: 'pages.uiKit.title',
+      description: 'pages.uiKit.description',
     },
   },
 ]);
