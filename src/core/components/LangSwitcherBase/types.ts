@@ -1,6 +1,8 @@
-export enum LangName {
-  RUS = 'rus',
-  ENG = 'eng',
+import { IconName } from '@core/components/IconBase';
+
+export enum LangCode {
+  RU = 'ru',
+  EN = 'en',
 }
 
 export enum LangLabel {
@@ -11,4 +13,10 @@ export enum LangLabel {
 export interface ILocale {
   code: string;
   name: string;
+}
+
+export interface ILanguagesList {
+  code: LangCode;
+  label: LangLabel;
+  icon: IconName;
 }
