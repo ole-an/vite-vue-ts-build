@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { $t } from '@/main.ts';
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <h1>
