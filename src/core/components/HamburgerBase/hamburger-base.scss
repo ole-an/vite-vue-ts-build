@@ -1,0 +1,114 @@
+$vertical-transition-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1);
+$vertical-transition-active-function: cubic-bezier(
+  0.33333,
+  0,
+  0.66667,
+  0.33333
+);
+$transform-rotate-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$transform-rotate-active-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+$row-height: 2px; //4px
+$interlinear-distance: 4px; //6px
+$hamburger-width: 24px; //40px
+$hamburger-height: $row-height * 3 + $interlinear-distance * 2;
+
+.hamburger {
+  $hamburger: &;
+  display: flex; //inline-block;
+  overflow: visible;
+  margin: 0;
+  border: 0;
+  padding: 12px 12px;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  transition-property: opacity;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.is-active {
+    &:hover {
+      opacity: 0.7;
+    }
+
+    & #{$hamburger}__inner {
+      transform: translate3d(0, -($row-height + $interlinear-distance), 0)
+        rotate(-45deg); //translate3d(0, -10px, 0) rotate(-45deg);
+      transition-delay: 0.22s;
+      transition-timing-function: $transform-rotate-active-function;
+
+      &::before {
+        top: 0;
+        transform: rotate(-90deg);
+        transition:
+          top 0.1s 0.16s $vertical-transition-active-function,
+          transform 0.13s 0.25s $transform-rotate-active-function;
+      }
+
+      &::after {
+        top: 0;
+        opacity: 0;
+        transition:
+          top 0.2s $vertical-transition-active-function,
+          opacity 0.1s 0.22s linear;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: inline-block;
+    width: $hamburger-width;
+    height: $hamburger-height;
+  }
+
+  &__inner {
+    display: block;
+    top: auto;
+    bottom: 0;
+    //margin-top: -2px;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: $transform-rotate-function;
+
+    &,
+    &::before,
+    &::after {
+      position: absolute;
+      border-radius: 4px;
+      width: $hamburger-width;
+      height: $row-height;
+      background-color: var(--hamburger-rows-background-color);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+
+    &::before {
+      top: -($row-height + $interlinear-distance); //-10px;
+      transition:
+        top 0.12s 0.2s $vertical-transition-function,
+        transform 0.13s $transform-rotate-function;
+    }
+
+    &::after {
+      top: -($row-height + $interlinear-distance) * 2; //-20px;
+      //bottom: -($row-height + $interlinear-distance); //-10px;
+      transition:
+        top 0.2s 0.2s $vertical-transition-function,
+        opacity 0.1s linear;
+    }
+  }
+}
