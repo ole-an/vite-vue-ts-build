@@ -6,7 +6,7 @@ import {
   ButtonTheme,
   ButtonSize,
 } from '@core/components/ButtonBase';
-import { TransitionFadeBase } from '@core/components/TransitionFadeBase';
+import { TransitionModalBase } from '@core/components/TransitionModalBase';
 import { getScrollbarWidth, trapFocus } from '@core/utils/general.ts';
 
 /* https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/ */
@@ -84,7 +84,7 @@ const onKeyPress = (event: KeyboardEvent): void => {
 </script>
 
 <template>
-  <TransitionFadeBase :duration="500">
+  <TransitionModalBase :duration="500">
     <div
       v-if="modelValue"
       ref="modal"
@@ -129,7 +129,7 @@ const onKeyPress = (event: KeyboardEvent): void => {
         </div>
       </div>
     </div>
-  </TransitionFadeBase>
+  </TransitionModalBase>
 </template>
 
 <style lang="scss">
