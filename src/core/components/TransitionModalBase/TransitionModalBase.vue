@@ -1,11 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <Transition name="transition-fade-base">
+  <Transition name="transition-modal-base">
     <slot></slot>
   </Transition>
 </template>
 
 <style lang="scss">
-@use 'transition-fade-base';
+@use 'transition-modal-base';
 </style>
