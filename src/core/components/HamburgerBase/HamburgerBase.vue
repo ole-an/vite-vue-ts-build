@@ -11,13 +11,13 @@ const toggleHamburger = () => {
 <template>
   <button
     :class="{ 'is-active': isOpen }"
-    class="hamburger"
+    class="hamburger-base"
     type="button"
     @click="toggleHamburger"
   >
-    <div class="hamburger__box">
-      <div class="hamburger__inner"></div>
-    </div>
+    <span class="hamburger-base__box">
+      <span class="hamburger-base__inner"></span>
+    </span>
   </button>
 </template>
 

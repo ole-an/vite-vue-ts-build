@@ -7,14 +7,14 @@ $vertical-transition-active-function: cubic-bezier(
 );
 $transform-rotate-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 $transform-rotate-active-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-$row-height: 2px; //4px
-$interlinear-distance: 4px; //6px
-$hamburger-width: 24px; //40px
+$row-height: 2px;
+$interlinear-distance: 4px;
+$hamburger-width: 24px;
 $hamburger-height: $row-height * 3 + $interlinear-distance * 2;
 
-.hamburger {
+.hamburger-base {
   $hamburger: &;
-  display: flex; //inline-block;
+  display: flex;
   overflow: visible;
   margin: 0;
   border: 0;
@@ -29,17 +29,18 @@ $hamburger-height: $row-height * 3 + $interlinear-distance * 2;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   &.is-active {
     &:hover {
-      opacity: 0.7;
+      opacity: 0.8;
     }
 
     & #{$hamburger}__inner {
       transform: translate3d(0, -($row-height + $interlinear-distance), 0)
-        rotate(-45deg); //translate3d(0, -10px, 0) rotate(-45deg);
+        rotate(-45deg);
+      transition-property: transform;
       transition-delay: 0.22s;
       transition-timing-function: $transform-rotate-active-function;
 
@@ -72,7 +73,7 @@ $hamburger-height: $row-height * 3 + $interlinear-distance * 2;
     display: block;
     top: auto;
     bottom: 0;
-    //margin-top: -2px;
+    transition-property: transform;
     transition-duration: 0.13s;
     transition-delay: 0.13s;
     transition-timing-function: $transform-rotate-function;
@@ -84,7 +85,7 @@ $hamburger-height: $row-height * 3 + $interlinear-distance * 2;
       border-radius: 4px;
       width: $hamburger-width;
       height: $row-height;
-      background-color: var(--hamburger-rows-background-color);
+      background-color: var(--hamburger-base-background-color);
     }
 
     &::before,
@@ -97,15 +98,14 @@ $hamburger-height: $row-height * 3 + $interlinear-distance * 2;
     }
 
     &::before {
-      top: -($row-height + $interlinear-distance); //-10px;
+      top: -($row-height + $interlinear-distance);
       transition:
         top 0.12s 0.2s $vertical-transition-function,
         transform 0.13s $transform-rotate-function;
     }
 
     &::after {
-      top: -($row-height + $interlinear-distance) * 2; //-20px;
-      //bottom: -($row-height + $interlinear-distance); //-10px;
+      top: -($row-height + $interlinear-distance) * 2;
       transition:
         top 0.2s 0.2s $vertical-transition-function,
         opacity 0.1s linear;
