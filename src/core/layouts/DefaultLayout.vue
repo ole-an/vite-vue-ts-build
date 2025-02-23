@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { HeaderBase } from '@core/components/HeaderBase';
+import { HeaderBase } from '@core/components/Header/HeaderBase';
 import { MainBase } from '@core/components/MainBase';
-import { FooterBase } from '@core/components/FooterBase';
+import { FooterBase } from '@core/components/Footer/FooterBase';
 </script>
 
 <template>
