@@ -25,6 +25,9 @@ $semi-black: color.change($black, $alpha: 0.6);
   --transition-duration-base: 0.3s;
   --transition-duration-normal: 0.25s;
   --container-max-width: 1200px;
+  --header-height-sm: 48px;
+  --header-height-md: 52px;
+  --header-height-lg: 56px;
   --modal-overflow-background-color: #{$semi-black};
   --modal-content-offset: 32px;
   --modal-base-gutters: 16px;
@@ -36,7 +39,7 @@ $semi-black: color.change($black, $alpha: 0.6);
 
 :root.light {
   color-scheme: light;
-  --bg-color: $white;
+  --bg-color: #{$white};
   --button-base-primary-border-color: #{$black};
   --button-base-primary-color: #{$white};
   --button-base-primary-background-color: #{$black};
@@ -55,7 +58,14 @@ $semi-black: color.change($black, $alpha: 0.6);
   --color-scheme-switcher-base-toggler-backgound-color: #{$white};
   --color-scheme-switcher-base-icon-color: #{color.change($eclipse, $alpha: 0.7)};
   --language-switcher-base-button-color: #{$nero};
-  --hamburger-rows-background-color: #{$nero};
+  --hamburger-base-background-color: #{$nero};
+  --header-bar-background-color: #{$white};
+  --header-screen-background-color: #{$white};
+  --header-screen-container-children-border-color: #{color.change(
+      $davy-grey,
+      $alpha: 0.25
+    )};
+  --header-screen-label-color: #{$davy-grey};
   --dropdown-background-color: #{$white};
   --dropdown-border-color: #{$black};
   --text-color: #{$black};
@@ -89,7 +99,14 @@ $semi-black: color.change($black, $alpha: 0.6);
   --color-scheme-switcher-base-toggler-backgound-color: #{$nero};
   --color-scheme-switcher-base-icon-color: #{$dim-white};
   --language-switcher-base-button-color: #{$dim-white};
-  --hamburger-rows-background-color: #{$dim-white};
+  --hamburger-base-background-color: #{$dim-white};
+  --header-bar-background-color: #{$nero};
+  --header-screen-background-color: #{$nero};
+  --header-screen-container-children-border-color: #{color.change(
+      $matterhorn,
+      $alpha: 0.65
+    )};
+  --header-screen-label-color: #{color.change($mercury, $alpha: 0.5)};
   --dropdown-background-color: #{$nero};
   --dropdown-border-color: #{$davy-grey};
   --text-color: #{$dim-white};
