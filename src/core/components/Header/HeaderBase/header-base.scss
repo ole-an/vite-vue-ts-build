@@ -1,0 +1,20 @@
+@use '@styles/mixins' as mix;
+
+.header-base {
+  --header-height: var(--header-height-sm);
+  z-index: 10;
+
+  @include mix.media-breakpoint-up(md) {
+    --header-height: var(--header-height-md);
+  }
+
+  @include mix.media-breakpoint-up(lg) {
+    --header-height: var(--header-height-lg);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
