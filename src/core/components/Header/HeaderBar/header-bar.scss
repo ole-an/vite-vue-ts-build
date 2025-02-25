@@ -1,0 +1,78 @@
+@use '@styles/mixins' as mix;
+
+.header-bar {
+  --header-height: var(--header-height-sm);
+  position: relative;
+  height: var(--header-height);
+  background-color: var(--header-bar-background-color);
+
+  @include mix.media-breakpoint-up(md) {
+    --header-height: var(--header-height-md);
+  }
+
+  @include mix.media-breakpoint-up(lg) {
+    --header-height: var(--header-height-lg);
+  }
+
+  &__container {
+    height: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    height: 100%;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: auto;
+    padding-right: var(--space-24);
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__nav {
+    display: none;
+
+    @include mix.media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__link,
+  &__lang-switcher,
+  &__color-switcher {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-16);
+    min-height: var(--header-height);
+    height: 100%;
+  }
+
+  &__lang-switcher,
+  &__color-switcher {
+    display: none;
+
+    @include mix.media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
+
+  &__hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mix.media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
