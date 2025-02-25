@@ -7,7 +7,6 @@ import {
 } from '@core/components/ButtonBase';
 import { IconBase, IconName, IconSize } from '@core/components/IconBase';
 import { ModalBase } from '@core/components/ModalBase';
-import { $t } from '@/main.ts';
 
 defineEmits(['update:modelValue']);
 
