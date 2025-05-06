@@ -5,6 +5,7 @@ import IconEarth from '@assets/icons/earth.svg';
 import IconFlagEngland from '@assets/icons/flag-england.svg';
 import IconFlagRussia from '@assets/icons/flag-russia.svg';
 import IconMoon from '@assets/icons/moon.svg';
+import IconSearch from '@assets/icons/search.svg';
 import IconSun from '@assets/icons/sun.svg';
 
 export const ICONS = {
@@ -14,5 +15,6 @@ export const ICONS = {
   [IconName.flagEngland]: IconFlagEngland,
   [IconName.flagRussia]: IconFlagRussia,
   [IconName.moon]: IconMoon,
+  [IconName.search]: IconSearch,
   [IconName.sun]: IconSun,
 };

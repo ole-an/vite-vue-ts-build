@@ -17,5 +17,6 @@ export enum IconName {
   flagEngland = 'flag-england',
   flagRussia = 'flag-russia',
   moon = 'moon',
+  search = 'search',
   sun = 'sun',
 }
