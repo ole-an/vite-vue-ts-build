@@ -17,6 +17,19 @@
       "button": "Choose language"
     }
   },
+  "components": {
+    "searchBase": {
+      "placeholder": "Enter search phrase",
+      "clear": {
+        "label": "Button clear",
+        "description": "Clear search field"
+      },
+      "search": {
+        "label": "Button search",
+        "description": "Send request to search"
+      }
+    }
+  },
   "pages": {
     "main": {
       "title": "Main page",
@@ -33,6 +46,9 @@
     "uiKit": {
       "buttons": {
         "title": "Buttons"
+      },
+      "form": {
+        "title": "Form elements"
       },
       "icons": {
         "title": "Icons"

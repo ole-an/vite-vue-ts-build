@@ -17,6 +17,19 @@
       "button": "Выберите язык"
     }
   },
+  "components": {
+    "searchBase": {
+      "placeholder": "Введите фразу для поиска",
+      "clear": {
+        "label": "Кнопка очистить",
+        "description": "Очистить поле поиска"
+      },
+      "search": {
+        "label": "Кнопка поиска",
+        "description": "Отправить поисковый запрос"
+      }
+    }
+  },
   "pages": {
     "main": {
       "title": "Тайтл главной страницы",
@@ -33,6 +46,9 @@
     "uiKit": {
       "buttons": {
         "title": "Кнопки"
+      },
+      "form": {
+        "title": "Элементы формы"
       },
       "icons": {
         "title": "Иконки"

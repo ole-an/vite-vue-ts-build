@@ -7,6 +7,7 @@ import {
 } from '@core/components/ButtonBase';
 import { IconBase, IconName, IconSize } from '@core/components/IconBase';
 import { ModalBase } from '@core/components/ModalBase';
+import { SearchBase } from '@core/components/SearchBase';
 
 defineEmits(['update:modelValue']);
 
@@ -102,6 +103,18 @@ const modalState = ref(false);
             </ButtonBase>
           </template>
         </ModalBase>
+      </div>
+    </section>
+    <section class="ui-kit__section">
+      <h2 class="ui-kit__title">
+        {{ $t('modules.uiKit.form.title') }}
+      </h2>
+      <div class="flex_column_32">
+        <ul class="flex_column_24">
+          <li>
+            <SearchBase />
+          </li>
+        </ul>
       </div>
     </section>
   </div>
