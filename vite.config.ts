@@ -40,7 +40,6 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        additionalData: '@use "@styles/index.scss";',
         api: 'modern-compiler',
       },
     },

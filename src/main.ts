@@ -6,6 +6,7 @@ import { setClassName } from '@core/utils/general.ts';
 import { router } from '@/router/router.ts';
 import App from '@/App.vue';
 import { registerLayouts } from '@/layouts/register.ts';
+import './styles/index.scss';
 
 const pinia: Pinia = createPinia();
 
