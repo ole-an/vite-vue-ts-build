@@ -16,7 +16,8 @@ $semi-black: color.change($black, $alpha: 0.6);
 
 :root {
   --border-radius-base: 8px;
-  // --font-family-base: name;
+  --font-family-base: 'Roboto', 'Helvetica', 'Helvetica Neue', 'Arial',
+    sans-serif;
   --font-weight-base: 400;
   --font-size-normal: 14px;
   --font-size-base: 16px;
