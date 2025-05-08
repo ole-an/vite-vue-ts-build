@@ -77,6 +77,8 @@ $semi-black: color.change($black, $alpha: 0.6);
   --modal-border-color: #{$white};
   --modal-close-button-color: #{$black};
   --modal-header-color: #{$black};
+  --search-base-primary-placeholder-color: #{$davy-grey};
+  --search-base-primary-text-color: #{$black};
 }
 
 :root.dark {
@@ -118,6 +120,8 @@ $semi-black: color.change($black, $alpha: 0.6);
   --modal-border-color: #{$davy-grey};
   --modal-close-button-color: #{$dim-white};
   --modal-header-color: #{$dim-white};
+  --search-base-primary-placeholder-color: #{$mercury};
+  --search-base-primary-text-color: #{$white};
 }
 
 $box-shadows: (

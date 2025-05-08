@@ -30,7 +30,12 @@
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-base);
     line-height: var(--line-height-base);
+    color: var(--search-base-primary-text-color);
     background-color: transparent;
+
+    &::placeholder {
+      color: var(--search-base-primary-placeholder-color);
+    }
 
     &:focus,
     &:focus-visible {
