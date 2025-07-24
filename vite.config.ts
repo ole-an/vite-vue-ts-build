@@ -8,7 +8,8 @@ import svgLoader from 'vite-svg-loader';
 dotenv.config();
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/vite-vue-ts-build/' : `/`,
+  base:
+    process.env.NODE_ENV === 'production' ? '/vite-vue-ts-build-demo/' : `/`,
   define: {
     __APP_URL: JSON.stringify(process.env.APP_URL),
   },
