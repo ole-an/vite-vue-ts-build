@@ -1,12 +1,12 @@
 import { watch } from 'vue';
-import { createRouter, createWebHistory, Router } from 'vue-router';
+import { createRouter, createWebHashHistory, Router } from 'vue-router';
 import { i18n } from '@core/composables/i18n.ts';
 import { routes } from '@/router/routes/routes.ts';
 
 const { t } = i18n.global;
 
 export const router: Router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
